@@ -4,4 +4,7 @@
 	<h2><b><%= @place.perfect_for %></h2>
 	<br/>
 	<p><%= @place.description %></p> 
+	<div class="pull-right">
+		<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
+	<div>
 </div>
