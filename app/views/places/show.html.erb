@@ -65,29 +65,31 @@
 </div>
 
 <!-- Review/Comment section -->
+<div class="big-box col-xs-10 col-xs-offset-1">
+	<div class ="col-xs-10 col-xs-offset-1">
+		<h2 align ="center"> Reviews </h2><br/>
+		<!-- button trigger modal -->
+	<div class="centered">
+		<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
+		  Add Your Review
+		</button> <br/ >
+	</div>
+	</div>
 
-<div class ="col-xs-10 col-xs-offset-1">
-	<h2 class="pull-left"> Reviews </h2>
-
-	<!-- button trigger modal -->
-
-	<button class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal">
-	  Add Your Review
-	</button> <br/ >
-</div>
-
-<div class ="clear"></div>
+	<div class ="clear"></div>
 
 <!-- comments -->
 
 <% @place.comments.each do |comment| %>
-	<div class="col-xs-12 col-sm-6">
+	<div class="col-xs-12 col-sm-6" >
 		<blockquote>
 			<% if comment.humanized_rating.present? %>
-			<b><%= comment.humanized_rating %></b> -
+			<b><%= comment.humanized_rating %></b><br/>
 			<% end %>
 			<%= comment.message %>
 			<small><%= comment.user.email %></small>
 		</blockquote>
 	</div>
 <% end %>
+
+</div>

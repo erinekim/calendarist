@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 
 blockquote {
 	background: #f9f9f9;
-	border-left: 10px solid #ccc;
+	border-left: 5px solid #ccc;
 	margin: 1.5em 10px;
 	padding: 0.5em 10px;
 	quotes: "\201C""\201D""\2018""\2019";
@@ -65,6 +65,10 @@ blockquote:before {
 
 blockquote p {
 	display: inline;
+}
+
+.centered{
+	text-align: center;
 }
 
 .carousel-inner > .item >img, .carousel-inner > .item > a > img {
