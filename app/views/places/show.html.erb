@@ -41,7 +41,22 @@
 <div class ="clear"></div>
 <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
 	<%= f.input :message %>
-	<%= f.input :rating %>
+	<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
 	<br />
 	<%= f.submit "Add Your Review", :class=> 'btn btn-info btn-lg' %>
+<% end %>
+
+<br />
+<h2> Reviews </h2>
+
+<% @place.comments.each do |comment| %>
+	<div>
+		<blockquote>
+			<% if comment.humanized_rating.present? %>
+			<b><%= comment.humanized_rating %></b> -
+			<% end %>
+			<%= comment.message %>
+			<small><%= comment.user.email %></small>
+		</blockquote>
+	</div>
 <% end %>
