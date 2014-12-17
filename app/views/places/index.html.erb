@@ -76,10 +76,24 @@
     <i><%= place.address %></i><br /><br />
     <i><b><%= place.perfect_for %></i></b><br />
     <p><%= place.description %></p><br />
+
+    <% if place.comments.present? %>
+ 
+    <blockquote>
+      <% if place.comments.last.humanized_rating.present? %>
+        <b><%= place.comments.last.humanized_rating %></b> -
+      <% end %>
+      <%= place.comments.last.message %>
+      <small><%= place.comments.last.user.email %></small>
+    </blockquote>
+ 
+<% end %> 
   </div>
 
 <% end %>
 
-<div class="pagination col-xs-12">
+<!-- pagination -->
+
+<div class="pagination">
 <%= will_paginate @places, :page_links => true %>
 </div>
