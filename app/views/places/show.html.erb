@@ -29,21 +29,18 @@
 
  <div id="map-canvas"></div>
  <% end %>
- <br />
 
-<div class="pull-right">
-	<% if current_user && current_user == @place.user %>
-	<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
-	<%= link_to 'Delete', place_path(@place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'}, :class=> 'btn btn-danger' %>
-	<% end %>
+<br />
+	<div class="pull-right">
+		<% if current_user && current_user == @place.user %>
+		<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
+		<%= link_to 'Delete', place_path(@place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'}, :class=> 'btn btn-danger' %>
+		<% end %>
+	</div>
+
 </div>
 
 <div class ="clear"></div>
-
-<!-- Button trigger modal -->
-<button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Your Review
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -67,12 +64,24 @@
   </div>
 </div>
 
+<!-- Review/Comment section -->
 
-<br />
-<h2> Reviews </h2>
+<div class ="col-xs-10 col-xs-offset-1">
+	<h2 class="pull-left"> Reviews </h2>
+
+	<!-- button trigger modal -->
+
+	<button class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+	  Add Your Review
+	</button> <br/ >
+</div>
+
+<div class ="clear"></div>
+
+<!-- comments -->
 
 <% @place.comments.each do |comment| %>
-	<div>
+	<div class="col-xs-12 col-sm-6">
 		<blockquote>
 			<% if comment.humanized_rating.present? %>
 			<b><%= comment.humanized_rating %></b> -
