@@ -1,7 +1,7 @@
 Calendarist::Application.routes.draw do
 
   devise_for :users
-  root 'places#index'
+  root 'static_pages#index'
   resources :places do
   resources :comments, :only => :create
   end 
