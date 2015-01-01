@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .frosty {
-	color: white;
+	color: black;
 }
 
 .frosty h1 {
@@ -45,6 +45,13 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 .features {
 	padding: 30px;
+	font-weight: 100;
+}
+
+.experiences {
+	padding: 20px;
+	font-family: "Helvetica Neue", Helvetica; 
+	font-weight: 100;
 }
 
 .btn {
